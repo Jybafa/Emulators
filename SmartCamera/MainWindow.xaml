@@ -1,0 +1,145 @@
+﻿<controls:MetroWindow x:Class="SmartCamera.MainWindow"
+         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+		xmlns:controls="http://metro.mahapps.com/winfx/xaml/controls"
+		xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+		xmlns:local="clr-namespace:SmartCamera"
+        mc:Ignorable="d"
+        Title="Интеллектуальная камера" Height="720" Width="960" ResizeMode="CanMinimize">
+	<controls:MetroWindow.LeftWindowCommands>
+		<controls:WindowCommands>
+			<materialDesign:PackIcon Kind="Cctv" Foreground="WhiteSmoke" Height="Auto" Width="Auto" Margin="5"/>
+		</controls:WindowCommands>
+	</controls:MetroWindow.LeftWindowCommands>
+	<Grid>
+		<Grid.RowDefinitions>
+			<RowDefinition Height="2*"/>
+			<RowDefinition Height="2*"/>
+			<RowDefinition Height="3*"/>
+		</Grid.RowDefinitions>
+		<Grid.ColumnDefinitions>
+			<ColumnDefinition Width="2*" MaxWidth="530"/>
+			<ColumnDefinition Width="1*"/>
+		</Grid.ColumnDefinitions>
+		<Grid Background="{DynamicResource PrimaryHueDarkBrush}" Margin="10,10,5,5">
+			<materialDesign:Card Background="{DynamicResource PrimaryHueDarkBrush}" Foreground="{DynamicResource PrimaryHueDarkForegroundBrush}" Margin="-1" VerticalAlignment="Stretch" FontSize="18">
+				<Grid>
+					<Grid.RowDefinitions>
+						<RowDefinition Height="1*"/>
+						<RowDefinition Height="3*"/>
+						<RowDefinition Height="3*"/>
+						<RowDefinition Height="3*"/>
+						<RowDefinition Height="1*"/>
+					</Grid.RowDefinitions>
+					<Grid.ColumnDefinitions>
+						<ColumnDefinition/>
+						<ColumnDefinition/>
+						<ColumnDefinition/>
+						<ColumnDefinition/>
+						<ColumnDefinition/>
+					</Grid.ColumnDefinitions>
+					<Label Content="Код изделия" HorizontalContentAlignment="Right" Foreground="White" Grid.Column="1" Grid.Row="1" Height="Auto" VerticalAlignment="Bottom"/>
+					<TextBox x:Name="TbProductCode" Text="0" HorizontalContentAlignment="Center" TextWrapping="Wrap" Grid.Column="2" Grid.Row="1" Margin="8,0" Height="Auto" PreviewTextInput="Tb_PreviewTextInput" PreviewKeyDown="Tb_PreviewKeyDown" MaxLength="3" VerticalAlignment="Bottom" BorderBrush="#89FFFFFF"/>
+					<Button x:Name="BtnClear" Content="Очистить" Background="Teal" BorderBrush="Teal" Grid.Column="3" Grid.Row="1" MaxHeight="40" Height="34.5"  HorizontalAlignment="Left" Click="BtnClear_Click" VerticalAlignment="Bottom"/>
+					<Button x:Name="BtnCode0" FontSize="16" Background="Teal" BorderBrush="Teal" Margin="8" Padding="2" Grid.Row="2" MaxHeight="100" Height="Auto" Click="BtnCode0_Click" Grid.RowSpan="2">
+						<TextBlock Text="Нет заказа (Код 0)" TextWrapping="Wrap" TextAlignment="Center"/>
+					</Button>
+					<TextBox x:Name="TbCode1" Text="202" HorizontalContentAlignment="Center" Grid.Column="1" Grid.Row="2" Margin="0,0,8,0" PreviewTextInput="Tb_PreviewTextInput" PreviewKeyDown="Tb_PreviewKeyDown" MaxLength="3" Height="Auto" VerticalAlignment="Bottom" BorderBrush="#89FFFFFF"/>
+					<Button x:Name="BtnCode1" Content="Применить" FontSize="16" Background="Teal" BorderBrush="Teal" Grid.Column="1" Grid.Row="3"  Margin="0,0,8,0" Padding="2" Height="Auto" Click="BtnCode1_Click" VerticalAlignment="Bottom"/>
+					<TextBox x:Name="TbCode2" Text="512" HorizontalContentAlignment="Center" Grid.Column="2" Grid.Row="2" Margin="0,0,8,0" PreviewTextInput="Tb_PreviewTextInput" PreviewKeyDown="Tb_PreviewKeyDown" MaxLength="3" Height="Auto" VerticalAlignment="Bottom" BorderBrush="#89FFFFFF"/>
+					<Button x:Name="BtnCode2" Content="Применить" FontSize="16" Background="Teal" BorderBrush="Teal" Grid.Column="2" Grid.Row="3"  Margin="0,0,8,0" Padding="2" Height="Auto" Click="BtnCode2_Click" VerticalAlignment="Bottom"/>
+					<TextBox x:Name="TbCode3" Text="404" HorizontalContentAlignment="Center" Grid.Column="3" Grid.Row="2" Margin="0,0,8,0" PreviewTextInput="Tb_PreviewTextInput" PreviewKeyDown="Tb_PreviewKeyDown" MaxLength="3" Height="Auto" VerticalAlignment="Bottom" BorderBrush="#89FFFFFF"/>
+					<Button x:Name="BtnCode3" Content="Применить" FontSize="16" Background="Teal" BorderBrush="Teal" Grid.Column="3" Grid.Row="3"  Margin="0,0,8,0" Padding="2" Height="Auto" Click="BtnCode3_Click" VerticalAlignment="Bottom"/>
+					<TextBox x:Name="TbCode4" Text="296" HorizontalContentAlignment="Center" Grid.Column="4" Grid.Row="2" Margin="0,0,8,0" PreviewTextInput="Tb_PreviewTextInput" PreviewKeyDown="Tb_PreviewKeyDown" MaxLength="3" Height="Auto" VerticalAlignment="Bottom" BorderBrush="#89FFFFFF"/>
+					<Button x:Name="BtnCode4" Content="Применить" FontSize="16" Background="Teal" BorderBrush="Teal" Grid.Column="4" Grid.Row="3"  Margin="0,0,8,0" Padding="2" Height="Auto" Click="BtnCode4_Click" VerticalAlignment="Bottom"/>
+				</Grid>
+			</materialDesign:Card>
+		</Grid>
+		<Grid Background="{DynamicResource PrimaryHueDarkBrush}" Margin="10,5,5,5" Grid.Row="1">
+			<materialDesign:Card Background="{DynamicResource PrimaryHueDarkBrush}" Foreground="{DynamicResource PrimaryHueDarkForegroundBrush}" Margin="-1" VerticalAlignment="Stretch" FontSize="18">
+				<Grid>
+					<Grid.ColumnDefinitions>
+						<ColumnDefinition Width="70"/>
+						<ColumnDefinition/>
+					</Grid.ColumnDefinitions>
+					<Grid.RowDefinitions>
+						<RowDefinition Height="1*"/>
+						<RowDefinition Height="1*"/>
+						<RowDefinition Height="1*"/>
+						<RowDefinition Height="1*"/>
+						<RowDefinition Height="1*"/>
+						<RowDefinition Height="1*" MaxHeight="16"/>
+						<RowDefinition Height="1*" MinHeight="30"/>
+					</Grid.RowDefinitions>
+					<TextBlock Margin="6,1" VerticalAlignment="Center" Grid.ColumnSpan="2">
+						Параметры подключения к серверу
+					</TextBlock>
+					<TextBlock Margin="0,0,0,0" VerticalAlignment="Bottom" TextAlignment="Right" Grid.Row="1">
+						IP:PORT
+					</TextBlock>
+					<TextBox x:Name="TbServer" BorderBrush="#89FFFFFF" Margin="10,0" FontSize="14" Grid.Column="1" Grid.Row="1"/>
+					<TextBlock Margin="0,0,0,0" VerticalAlignment="Bottom" TextAlignment="Right" Grid.Row="2">
+						AppKey
+					</TextBlock>
+					<TextBox  x:Name="TbKey" BorderBrush="#89FFFFFF" Margin="10,0" FontSize="14" Grid.Row="2" Grid.Column="1"/>
+					<TextBlock Margin="0,0,0,0" VerticalAlignment="Bottom" TextAlignment="Right" Grid.Row="3">
+						Thing
+					</TextBlock>
+					<TextBox x:Name="TbThing" BorderBrush="#89FFFFFF" Margin="10,0" FontSize="14" Grid.Column="1" Grid.Row="3"/>
+					<TextBlock Margin="0,0,0,0" VerticalAlignment="Bottom" TextAlignment="Right" Grid.Row="4">
+						Service
+					</TextBlock>
+					<TextBox x:Name="TbService" BorderBrush="#89FFFFFF" Margin="10,0" FontSize="14" Grid.Column="1" Grid.Row="4"/>
+					<Separator Style="{StaticResource MaterialDesignLightSeparator}" Margin="0,5" VerticalAlignment="Center" Grid.ColumnSpan="2" Grid.Row="5" />
+					<TextBlock FontSize="18" Grid.Row="6" VerticalAlignment="Top" HorizontalAlignment="Left" Grid.ColumnSpan="2" Margin="14,0,0,0" Width="100" Height="26">
+						Refresh time
+					</TextBlock>
+					<controls:NumericUpDown x:Name="NudRefreshTime" Value="3" Minimum="1" Maximum="9" VerticalAlignment="Top" ButtonsAlignment="Opposite" Grid.Row="6" Grid.Column="1" Margin="50,0,0,0" HorizontalAlignment="Left" Background="White" BorderBrush="#FF3D4647" Foreground="#FF3D4647" Height="26"/>
+					<CheckBox x:Name="CbSecurity" Style="{StaticResource MaterialDesignUserForegroundCheckBox}" Margin="120,0,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Grid.Row="6" Grid.Column="1" Width="87" Height="26">
+						Security
+					</CheckBox>
+					<Button x:Name="BtnConnect" Background="Teal" BorderBrush="Teal" Content="Подключиться" Padding="0" materialDesign:RippleAssist.IsCentered="True" Click="BtnConnect_Click" Grid.Column="1" Grid.Row="6" Height="26" VerticalAlignment="Top" HorizontalAlignment="Right" Width="112" Margin="0,0,10,0" FontSize="14"/>
+				</Grid>
+			</materialDesign:Card>
+		</Grid>
+		<Grid Background="{DynamicResource PrimaryHueDarkBrush}" Margin="10,5,5,10" Grid.Row="2">
+			<materialDesign:Card Background="{DynamicResource PrimaryHueDarkBrush}" Foreground="{DynamicResource PrimaryHueDarkForegroundBrush}" Margin="-1" VerticalAlignment="Stretch" FontSize="18">
+				<Grid>
+					<Grid.RowDefinitions>
+						<RowDefinition/>
+					</Grid.RowDefinitions>
+					<TextBlock Margin="16,4,16,0" Height="24" VerticalAlignment="Top">
+									Протокол обработки команд
+					</TextBlock>
+					<TextBox x:Name="TbLogSmartCamera" FontSize="14" IsReadOnly="True" TextChanged="TbLog_TextChanged" Margin="16,32,16,16" Background="White" Padding="5 0 0 0" Foreground="#FF3D4647" ScrollViewer.VerticalScrollBarVisibility="Visible"/>
+				</Grid>
+			</materialDesign:Card>
+		</Grid>
+		<Grid Background="{DynamicResource PrimaryHueDarkBrush}" Margin="5,10,10,10" Grid.Column="1" Grid.RowSpan="3">
+			<materialDesign:Card Background="{DynamicResource PrimaryHueDarkBrush}" Foreground="{DynamicResource PrimaryHueDarkForegroundBrush}" Margin="-1" Padding="8" FontSize="20" VerticalAlignment="Stretch">
+				<Grid>
+					<Grid.RowDefinitions>
+						<RowDefinition Height="1*" MaxHeight="24"/>
+						<RowDefinition Height="1*" MaxHeight="22"/>
+						<RowDefinition Height="2*" MaxHeight="45"/>
+						<RowDefinition Height="1*" MaxHeight="22"/>
+						<RowDefinition Height="16*"/>
+						<RowDefinition Height="1*" MaxHeight="22"/>
+						<RowDefinition Height="2*" MaxHeight="45"/>
+					</Grid.RowDefinitions>
+					<TextBlock Margin="0" VerticalAlignment="Center" TextAlignment="Center">
+						Файл настроек
+					</TextBlock>
+					<Separator Style="{StaticResource MaterialDesignLightSeparator}" Margin="0" Grid.Row="1"/>
+					<Button x:Name="BtnLoadSettings" Background="Teal" BorderBrush="Teal" Content="Загрузить из файла настроек" Padding="2 0 0 0" materialDesign:RippleAssist.IsCentered="True" Click="BtnLoadSettings_Click" Margin="5" Grid.Row="2"/>
+					<Separator Style="{StaticResource MaterialDesignLightSeparator}" Margin="0" Grid.Row="3" />
+					<ListBox x:Name="LbUserParameters" Foreground="#FF3D4647" ScrollViewer.HorizontalScrollBarVisibility="Auto" ScrollViewer.VerticalScrollBarVisibility="Visible" FontSize="14" ScrollViewer.CanContentScroll="True" ScrollViewer.IsDeferredScrollingEnabled="True" Background="White" BorderBrush="#00000000" Margin="0,5" Grid.Row="4"/>
+					<Separator Style="{StaticResource MaterialDesignLightSeparator}" Margin="0" Grid.Row="5"/>
+					<Button x:Name="BtnSetSettings" Background="Teal" BorderBrush="Teal" Content="Установить настройки" Padding="2 0 0 0" materialDesign:RippleAssist.IsCentered="True" Click="BtnSetSettings_Click" Margin="5" Grid.Row="6"/>
+				</Grid>
+			</materialDesign:Card>
+		</Grid>
+	</Grid>
+</controls:MetroWindow>
