@@ -1,0 +1,4 @@
+Team01;academic-educatorsextension.portal.ptc.io;7c6f45c5-fab8-4834-9c03-47ed879253bb;True;SafetySensor_Jubafa;Distance_set;
+Team02;academic-educatorsextension.portal.ptc.io;7c6f45c5-fab8-4834-9c03-47ed879253bb;True;SafetySensor_Jubafa;Distance_set;
+Team03;academic-educatorsextension.portal.ptc.io;7c6f45c5-fab8-4834-9c03-47ed879253bb;True;SafetySensor_Jubafa;Distance_set;
+Team04;academic-educatorsextension.portal.ptc.io;7c6f45c5-fab8-4834-9c03-47ed879253bb;True;SafetySensor_Jubafa;Distance_set;
